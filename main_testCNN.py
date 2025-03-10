@@ -121,7 +121,7 @@ plot_fixed_index(test_loader, model, device, index=10)
 plot_fixed_index(test_loader, model, device, index=15)  
 plot_fixed_index(test_loader, model, device, index=20) 
 
-#Moein Code
+
 def compute_spectrum_torch(data):
     data_torch = torch.tensor(data, dtype=torch.float32) if not isinstance(data, torch.Tensor) else data.float()
     return torch.abs(torch.fft.rfft(data_torch, dim=-1)).numpy()
@@ -208,6 +208,6 @@ plt.xlabel('Wavenumber')
 plt.ylabel('Magnitude')
 plt.legend()
 plt.grid(True)
-plt.savefig(MODELNAME+"conradnew20"+"FFT.png")
+plt.savefig(MODELNAME+"new20"+"FFT.png")
 plt.show()
 
