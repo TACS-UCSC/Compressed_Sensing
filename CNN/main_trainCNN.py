@@ -3,15 +3,13 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader, random_split, TensorDataset
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
-from Loss_Spectrum import spectral_sqr_abs2
+from loss_Spectrum import spectral_sqr_abs2
 
 LossFunction= "MSE"  # Loss funtion is either MSE or Spectrum
-EPOCH=100
-# LAMBDA=0.7
-# MODELNAME=LossFunction+'CNN90S_EP'+str(EPOCH)+'Lambda'+str(LAMBDA)+'WaveLat'+str(50)
-MODELNAME=LossFunction+'ch_CNN99S_EP'+str(EPOCH)
+EPOCH=500
+DATA="dn" #Denorm and norm task, the normalization part changed.
+MODELNAME=DATA+LossFunction+'CNN99S_EP'+str(EPOCH)
 print("MODELNAME:"+MODELNAME)
 torch.set_default_dtype(torch.float32)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
